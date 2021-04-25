@@ -1,10 +1,10 @@
 <template>
-  <div class="kontrak">
+  <div class="jadwal">
     <!--<img alt="Vue logo" src="../assets/logo.png"> -->
     <Slider />
     <hr class="my-3">
       <router-link class="btn btn-primary" to="/createjadwal">Add Jadwal</router-link>
-    <table class="table">
+    <table class="table table-striped">
   <thead>
     <tr>
         <th scope="col">ID</th>
@@ -14,13 +14,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(data, index) in jadwal" :key="index">
-      <td>{{ data.id }}</td>
-      <td>{{ data.jadwal }}</td>
-      <td>{{ data.matakuliah_id }}</td>
+    <tr v-for="(jadwals, index) in jadwal" :key="index">
+      <td>{{ jadwals.id }}</td>
+      <td>{{ jadwals.jadwal }}</td>
+      <td>{{ jadwals.matakuliah_id }}</td>
       <td>
-        <router-link class="btn btn-success" :to="{name:'Editjadwal', params:{id:data.id}}">Edit</router-link>
-        <button @click.prevent="jadwalDelete(data.id)" class="btn btn-danger">Delete</button>
+        <router-link class="btn btn-success" :to="{name:'Editjadwal', params:{id:jadwals.id}}">Edit</router-link>
+        <button @click.prevent="jadwalDelete(jadwals.id)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>

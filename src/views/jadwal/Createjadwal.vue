@@ -38,7 +38,7 @@ export default {
 
     const jadwals = reactive({
       jadwal: '',
-      mahasiswa_id: ''
+      matakuliah_id: ''
       
     })
 
